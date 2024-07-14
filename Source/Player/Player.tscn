@@ -21,6 +21,7 @@ height = 448.0
 script = ExtResource("1_ue3wj")
 
 [node name="Triceratops" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="DefaultRotation" type="Node2D" parent="Triceratops"]
 rotation = 1.5708
