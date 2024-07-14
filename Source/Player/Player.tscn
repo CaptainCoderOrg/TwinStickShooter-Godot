@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bol2le5vop0cp"]
+[gd_scene load_steps=15 format=3 uid="uid://bol2le5vop0cp"]
 
 [ext_resource type="Texture2D" uid="uid://cqji2moqmowuc" path="res://Sprites/Triceratops/Triceratops-Back-Lower.png" id="1_3duwa"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ue3wj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://by0fcno4njn34" path="res://Sprites/Turret/TurretGun.png" id="9_y4ff5"]
 [ext_resource type="Texture2D" uid="uid://cbf2ebdbu7i2j" path="res://Sprites/Turret/TurretSoldier.png" id="10_u0rlj"]
 [ext_resource type="Script" path="res://Player/player_movement_behaviour.gd" id="11_ug3sm"]
+[ext_resource type="Script" path="res://Player/player_turret_behaviour.gd" id="13_0t121"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qfvi1"]
 radius = 106.0
@@ -86,6 +87,7 @@ position = Vector2(0, -19)
 texture = ExtResource("7_867nh")
 
 [node name="Turret" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="TurretBase" type="Sprite2D" parent="Turret"]
 rotation = 1.5708
@@ -106,3 +108,6 @@ shape = SubResource("CapsuleShape2D_qfvi1")
 
 [node name="PlayerMovementBehaviour" type="Node" parent="."]
 script = ExtResource("11_ug3sm")
+
+[node name="PlayerTurretBehaviour" type="Node" parent="."]
+script = ExtResource("13_0t121")

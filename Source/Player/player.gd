@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 @export var speed : float = 3
+@export var prefix : String = "player_1"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
