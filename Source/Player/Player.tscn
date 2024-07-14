@@ -102,6 +102,9 @@ texture = ExtResource("9_y4ff5")
 rotation = 1.5708
 texture = ExtResource("10_u0rlj")
 
+[node name="FirePosition" type="Marker2D" parent="Turret"]
+position = Vector2(146, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_qfvi1")

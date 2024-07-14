@@ -4,12 +4,6 @@ extends Node
 @onready var body : Node2D = %Triceratops
 @onready var player : Player = owner
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	movement_input = Input.get_vector(
 		"%s_move_left" % player.prefix, 
