@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://bol2le5vop0cp"]
+
+[ext_resource type="Texture2D" uid="uid://cqji2moqmowuc" path="res://Sprites/Triceratops/Triceratops-Back-Lower.png" id="1_3duwa"]
+[ext_resource type="Texture2D" uid="uid://boxgtm77cl5er" path="res://Sprites/Triceratops/Triceratops-Back-Upper.png" id="2_r6ow3"]
+[ext_resource type="Texture2D" uid="uid://dvjk3vmj7k82o" path="res://Sprites/Triceratops/Triceratops-Front-Lower.png" id="3_vwvo4"]
+[ext_resource type="Texture2D" uid="uid://nrv0pcot3wfd" path="res://Sprites/Triceratops/Triceratops-Front-Upper.png" id="4_75utk"]
+[ext_resource type="Texture2D" uid="uid://c43i3dkoc6rko" path="res://Sprites/Triceratops/Triceratops-Body.png" id="5_wkl00"]
+[ext_resource type="Texture2D" uid="uid://d1we3xpuymrwf" path="res://Sprites/Triceratops/Triceratops-Head.png" id="6_db20k"]
+[ext_resource type="Texture2D" uid="uid://dle3ow1qr4h7" path="res://Sprites/Turret/TurretStraps.png" id="7_867nh"]
+[ext_resource type="Texture2D" uid="uid://b6p16prypc58w" path="res://Sprites/Turret/TurretBase.png" id="8_xo45x"]
+[ext_resource type="Texture2D" uid="uid://by0fcno4njn34" path="res://Sprites/Turret/TurretGun.png" id="9_y4ff5"]
+[ext_resource type="Texture2D" uid="uid://cbf2ebdbu7i2j" path="res://Sprites/Turret/TurretSoldier.png" id="10_u0rlj"]
+
+[node name="Player" type="Node2D"]
+
+[node name="Triceratops" type="Node2D" parent="."]
+
+[node name="DefaultRotation" type="Node2D" parent="Triceratops"]
+rotation = 1.5708
+
+[node name="RightRearLeg" type="Node2D" parent="Triceratops/DefaultRotation"]
+position = Vector2(74, 120)
+
+[node name="Triceratops-back-lower" type="Sprite2D" parent="Triceratops/DefaultRotation/RightRearLeg"]
+position = Vector2(48.5, -90.5)
+texture = ExtResource("1_3duwa")
+
+[node name="Triceratops-back-upper" type="Sprite2D" parent="Triceratops/DefaultRotation/RightRearLeg"]
+position = Vector2(27.5, -21.5)
+texture = ExtResource("2_r6ow3")
+
+[node name="LeftRearLeg" type="Node2D" parent="Triceratops/DefaultRotation"]
+position = Vector2(-77, 120)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Triceratops-back-lower" type="Sprite2D" parent="Triceratops/DefaultRotation/LeftRearLeg"]
+position = Vector2(48.5, -90.5)
+texture = ExtResource("1_3duwa")
+
+[node name="Triceratops-back-upper" type="Sprite2D" parent="Triceratops/DefaultRotation/LeftRearLeg"]
+position = Vector2(27.5, -21.5)
+texture = ExtResource("2_r6ow3")
+
+[node name="RightFrontLeg" type="Node2D" parent="Triceratops/DefaultRotation"]
+position = Vector2(85, -70)
+
+[node name="Triceratops-front-lower" type="Sprite2D" parent="Triceratops/DefaultRotation/RightFrontLeg"]
+position = Vector2(28, -80.5)
+texture = ExtResource("3_vwvo4")
+
+[node name="Triceratops-front-upper" type="Sprite2D" parent="Triceratops/DefaultRotation/RightFrontLeg"]
+position = Vector2(17, -23.5)
+texture = ExtResource("4_75utk")
+
+[node name="LeftFrontLeg" type="Node2D" parent="Triceratops/DefaultRotation"]
+position = Vector2(-89, -70)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Triceratops-front-lower" type="Sprite2D" parent="Triceratops/DefaultRotation/LeftFrontLeg"]
+position = Vector2(28, -80.5)
+texture = ExtResource("3_vwvo4")
+
+[node name="Triceratops-front-upper" type="Sprite2D" parent="Triceratops/DefaultRotation/LeftFrontLeg"]
+position = Vector2(17, -23.5)
+texture = ExtResource("4_75utk")
+
+[node name="Triceratops-body" type="Sprite2D" parent="Triceratops/DefaultRotation"]
+texture = ExtResource("5_wkl00")
+
+[node name="Triceratops-head" type="Sprite2D" parent="Triceratops/DefaultRotation"]
+position = Vector2(0, -252)
+texture = ExtResource("6_db20k")
+
+[node name="TurretStraps" type="Sprite2D" parent="Triceratops/DefaultRotation"]
+position = Vector2(0, -19)
+texture = ExtResource("7_867nh")
+
+[node name="Turret" type="Node2D" parent="."]
+
+[node name="TurretBase" type="Sprite2D" parent="Turret"]
+rotation = 1.5708
+texture = ExtResource("8_xo45x")
+
+[node name="TurretGun" type="Sprite2D" parent="Turret"]
+position = Vector2(91, 0)
+rotation = 1.5708
+texture = ExtResource("9_y4ff5")
+
+[node name="TurretSoldier" type="Sprite2D" parent="Turret"]
+rotation = 1.5708
+texture = ExtResource("10_u0rlj")
