@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dna25o5ef8t8s"]
+
+[ext_resource type="Texture2D" uid="uid://b7lnd6437otb7" path="res://Sprites/Neanderthal/Grunt-Foot.png" id="1_0m2pc"]
+[ext_resource type="Texture2D" uid="uid://dwoeiuj2ahxvk" path="res://Sprites/Neanderthal/Grunt-Arm.png" id="2_vho7f"]
+[ext_resource type="Texture2D" uid="uid://dek5y51o4b3ph" path="res://Sprites/Neanderthal/Grunt-Club.png" id="3_har4f"]
+[ext_resource type="Texture2D" uid="uid://d4dfwiurtra7s" path="res://Sprites/Neanderthal/Grunt-Shoulders.png" id="4_gn4ar"]
+[ext_resource type="Texture2D" uid="uid://ba3pftacr7vq8" path="res://Sprites/Neanderthal/Grunt-Head.png" id="5_kehmc"]
+
+[node name="Neanderthal" type="Node2D"]
+
+[node name="Right-foot" type="Sprite2D" parent="."]
+position = Vector2(20, -30)
+texture = ExtResource("1_0m2pc")
+
+[node name="Left-foot" type="Sprite2D" parent="."]
+position = Vector2(-20, -30)
+scale = Vector2(-1, 1)
+texture = ExtResource("1_0m2pc")
+
+[node name="Left-arm" type="Sprite2D" parent="."]
+position = Vector2(-45, -42)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("2_vho7f")
+
+[node name="Attack-pivot" type="Node2D" parent="."]
+position = Vector2(52, -13)
+
+[node name="Right-arm" type="Sprite2D" parent="Attack-pivot"]
+position = Vector2(-7.5, -28.5)
+texture = ExtResource("2_vho7f")
+
+[node name="Grunt-club" type="Sprite2D" parent="Attack-pivot"]
+position = Vector2(-28.5, -105.5)
+texture = ExtResource("3_har4f")
+
+[node name="Grunt-shoulders" type="Sprite2D" parent="."]
+texture = ExtResource("4_gn4ar")
+
+[node name="Grunt-head" type="Sprite2D" parent="."]
+texture = ExtResource("5_kehmc")
