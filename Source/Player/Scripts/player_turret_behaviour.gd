@@ -6,6 +6,8 @@ extends Node
 @onready var fire_position : Node2D = %FirePosition
 @export var direction : Vector2
 
+var is_cooling_down : bool = false
+
 func _process(delta):
 	direction = Input.get_vector(
 		"%s_turret_left" % player.prefix, 
@@ -17,8 +19,13 @@ func _process(delta):
 		fire()
 
 func fire():
-	print("Fire")
+	if is_cooling_down: return
+	
 	var projectile = player.weapon.instantiate() as Projectile
 	projectile.global_position = fire_position.global_position
 	projectile.rotation = turret.rotation
-	get_tree().current_scene.add_child(projectile)
+	get_tree().get_first_node_in_group("bullet_manager").add_child(projectile)
+	is_cooling_down = true
+	var timer = get_tree().create_timer(player.weapon_cooldown)
+	await timer.timeout
+	is_cooling_down = false

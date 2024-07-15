@@ -9,3 +9,7 @@ func _physics_process(delta):
 	var dir : Vector2 = target.global_position - self.global_position
 	dir = dir.normalized() * velocity * ArenaManager.SPEED * delta
 	self.global_position += dir
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()

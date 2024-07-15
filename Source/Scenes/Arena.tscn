@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxqrlbf2jm6i6"]
+[gd_scene load_steps=2 format=3 uid="uid://cxqrlbf2jm6i6"]
 
 [ext_resource type="PackedScene" uid="uid://bol2le5vop0cp" path="res://Player/Player.tscn" id="1_koqpr"]
-[ext_resource type="PackedScene" uid="uid://d3dtnxn5mnsv2" path="res://Projectiles/Projectile.tscn" id="2_qoxd2"]
 
 [node name="Arena" type="Node2D"]
 
@@ -11,5 +10,5 @@ position = Vector2(-59, -2)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)
 
-[node name="Projectile" parent="." instance=ExtResource("2_qoxd2")]
-position = Vector2(409, -40)
+[node name="BulletManager" type="Node2D" parent="." groups=["bullet_manager"]]
+unique_name_in_owner = true

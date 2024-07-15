@@ -22,6 +22,7 @@ height = 448.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dxqka")
 weapon = ExtResource("2_asewx")
+weapon_cooldown = 0.3
 
 [node name="Triceratops" type="Node2D" parent="."]
 unique_name_in_owner = true

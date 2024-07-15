@@ -32,3 +32,7 @@ shape = SubResource("CircleShape2D_7m1os")
 [node name="TravelDirection" type="Marker2D" parent="Body"]
 unique_name_in_owner = true
 position = Vector2(26, 0)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
