@@ -51,6 +51,10 @@ texture = ExtResource("4_gn4ar")
 [node name="Head" type="Sprite2D" parent="Body/DefaultRotation"]
 texture = ExtResource("5_kehmc")
 
+[node name="MoveTarget" type="Marker2D" parent="Body"]
+unique_name_in_owner = true
+position = Vector2(73, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m5hxs")
 
