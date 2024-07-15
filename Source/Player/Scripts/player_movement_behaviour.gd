@@ -4,7 +4,7 @@ extends Node
 @onready var body : Node2D = %Triceratops
 @onready var player : Player = owner
 
-func _physics_process(delta):
+func _physics_process(_delta : float) -> void:
 	movement_input = Input.get_vector(
 		"%s_move_left" % player.prefix, 
 		"%s_move_right" % player.prefix, 

@@ -8,7 +8,7 @@ extends Node
 
 var is_cooling_down : bool = false
 
-func _process(delta):
+func _process(_delta : float) -> void:
 	direction = Input.get_vector(
 		"%s_turret_left" % player.prefix, 
 		"%s_turret_right" % player.prefix, 
@@ -18,14 +18,14 @@ func _process(delta):
 	if not direction.is_zero_approx():
 		fire()
 
-func fire():
+func fire() -> void:
 	if is_cooling_down: return
 	
-	var projectile = player.weapon.instantiate() as Projectile
+	var projectile : Projectile = player.weapon.instantiate() as Projectile
 	projectile.global_position = fire_position.global_position
 	projectile.rotation = turret.rotation
 	get_tree().get_first_node_in_group("bullet_manager").add_child(projectile)
 	is_cooling_down = true
-	var timer = get_tree().create_timer(player.weapon_cooldown)
+	var timer : SceneTreeTimer = get_tree().create_timer(player.weapon_cooldown)
 	await timer.timeout
 	is_cooling_down = false

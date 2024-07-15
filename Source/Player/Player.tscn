@@ -19,7 +19,7 @@
 radius = 106.0
 height = 448.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_dxqka")
 weapon = ExtResource("2_asewx")
 weapon_cooldown = 0.3
