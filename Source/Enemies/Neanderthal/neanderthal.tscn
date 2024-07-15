@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dna25o5ef8t8s"]
+[gd_scene load_steps=9 format=3 uid="uid://dna25o5ef8t8s"]
 
 [ext_resource type="Texture2D" uid="uid://b7lnd6437otb7" path="res://Sprites/Neanderthal/Grunt-Foot.png" id="1_0m2pc"]
 [ext_resource type="Texture2D" uid="uid://dwoeiuj2ahxvk" path="res://Sprites/Neanderthal/Grunt-Arm.png" id="2_vho7f"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d4dfwiurtra7s" path="res://Sprites/Neanderthal/Grunt-Shoulders.png" id="4_gn4ar"]
 [ext_resource type="Texture2D" uid="uid://ba3pftacr7vq8" path="res://Sprites/Neanderthal/Grunt-Head.png" id="5_kehmc"]
 [ext_resource type="Script" path="res://Enemies/chase_player_behaviour.gd" id="6_wvy6x"]
+[ext_resource type="Script" path="res://Enemies/enemy_health_behaviour.gd" id="7_q8tuj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5hxs"]
 radius = 28.4429
@@ -55,6 +56,11 @@ texture = ExtResource("5_kehmc")
 unique_name_in_owner = true
 position = Vector2(73, 0)
 
+[node name="HitBox" type="Area2D" parent="Body"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body/HitBox"]
+polygon = PackedVector2Array(-23, -65, -11, -71, 11, -60, 25, -37, 25, 37, 13, 60, -10, 69, -25, 61, -33, 20, -30, -43)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m5hxs")
 
@@ -62,3 +68,9 @@ shape = SubResource("CircleShape2D_m5hxs")
 
 [node name="ChasePlayerBehaviour" type="Node" parent="Behaviours"]
 script = ExtResource("6_wvy6x")
+
+[node name="EnemyHealthBehaviour" type="Node" parent="Behaviours"]
+script = ExtResource("7_q8tuj")
+health = 3.0
+
+[connection signal="area_entered" from="Body/HitBox" to="Behaviours/EnemyHealthBehaviour" method="_on_hit_box_area_entered"]

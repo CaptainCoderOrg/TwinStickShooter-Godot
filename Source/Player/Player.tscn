@@ -21,6 +21,7 @@ height = 448.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_dxqka")
+speed = 10.0
 weapon = ExtResource("2_asewx")
 weapon_cooldown = 0.3
 
