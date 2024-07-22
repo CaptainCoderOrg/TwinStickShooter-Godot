@@ -11,7 +11,7 @@ func take_damage(damage : float) -> void:
 func death() -> void:
 	owner.queue_free()
 
-func _on_hit_box_area_entered(area : Area2D):
+func _on_hit_box_area_entered(area : Area2D) -> void:
 	var projectile : Projectile = area.owner as Projectile
 	if projectile:
 		take_damage(projectile.damage)

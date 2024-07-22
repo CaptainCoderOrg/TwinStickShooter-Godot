@@ -356,8 +356,8 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(45, -68)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 0
 script = ExtResource("1_dxqka")
-speed = 10.0
 weapon = ExtResource("2_asewx")
 weapon_cooldown = 0.3
 
@@ -465,8 +465,7 @@ libraries = {
 "": SubResource("AnimationLibrary_o4ndo")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
-root_node = NodePath("../..")
+[node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_bv3t7")
-advance_expression_base_node = NodePath("../../PlayerAnimationBehaviour")
-anim_player = NodePath("..")
+advance_expression_base_node = NodePath("../PlayerAnimationBehaviour")
+anim_player = NodePath("../AnimationPlayer")

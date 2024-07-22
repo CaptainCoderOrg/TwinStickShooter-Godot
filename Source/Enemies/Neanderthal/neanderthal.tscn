@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dna25o5ef8t8s"]
+[gd_scene load_steps=21 format=3 uid="uid://dna25o5ef8t8s"]
 
 [ext_resource type="Texture2D" uid="uid://b7lnd6437otb7" path="res://Sprites/Neanderthal/Grunt-Foot.png" id="1_0m2pc"]
 [ext_resource type="Texture2D" uid="uid://dwoeiuj2ahxvk" path="res://Sprites/Neanderthal/Grunt-Arm.png" id="2_vho7f"]
@@ -10,87 +10,7 @@
 [ext_resource type="Script" path="res://Enemies/Neanderthal/neanderthal_animation_behaviour.gd" id="8_f5bt4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5hxs"]
-radius = 28.4429
-
-[sub_resource type="Animation" id="Animation_ib1wi"]
-resource_name = "idle"
-
-[sub_resource type="Animation" id="Animation_vgu1k"]
-resource_name = "move"
-length = 0.3
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/DefaultRotation/RightFoot:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(20, -30), Vector2(19.9998, -42.0001)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/DefaultRotation/LeftFoot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-20.0002, -41.9999), Vector2(-20.0001, -32.9999)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/DefaultRotation/Shoulders:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.0872665, 0.0872665]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/DefaultRotation/LeftArm:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-48.0001, -15.9998), Vector2(-47.0001, -36.9998)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/DefaultRotation/AttackPivot:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(50.7891, -17.1307), Vector2(53, 7.99981)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Body/DefaultRotation/AttackPivot:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.0872665, 0.251327]
-}
+radius = 44.0
 
 [sub_resource type="Animation" id="Animation_8iofj"]
 length = 0.001
@@ -167,6 +87,86 @@ tracks/5/keys = {
 "values": [0.251327]
 }
 
+[sub_resource type="Animation" id="Animation_ib1wi"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_vgu1k"]
+resource_name = "move"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/DefaultRotation/RightFoot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, -30), Vector2(19.9998, -42.0001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/DefaultRotation/LeftFoot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20.0002, -41.9999), Vector2(-20.0001, -32.9999)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/DefaultRotation/Shoulders:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0872665]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/DefaultRotation/LeftArm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-48.0001, -15.9998), Vector2(-47.0001, -36.9998)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/DefaultRotation/AttackPivot:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50.7891, -17.1307), Vector2(53, 7.99981)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/DefaultRotation/AttackPivot:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0872665, 0.251327]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xjba7"]
 _data = {
 "RESET": SubResource("Animation_8iofj"),
@@ -174,36 +174,47 @@ _data = {
 "move": SubResource("Animation_vgu1k")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_co3ek"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0cqo3"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_83bo3"]
+resource_local_to_scene = true
 animation = &"move"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_tw5rj"]
+resource_local_to_scene = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_a1fhh"]
+resource_local_to_scene = true
+graph_offset = Vector2(-286.67, -33.9218)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_83bo3")
+nodes/Animation/position = Vector2(140, 120)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_tw5rj")
+nodes/TimeScale/position = Vector2(340, 100)
+nodes/output/position = Vector2(540, 120)
+node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_co3ek"]
+resource_local_to_scene = true
+animation = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a7iiu"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5gmm1"]
-xfade_time = 0.5
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8xykc"]
 advance_mode = 2
-advance_expression = "is_moving
-"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h6123"]
-xfade_time = 0.5
-advance_mode = 2
-advance_expression = "!is_moving"
+advance_expression = "is_moving"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_26wym"]
-states/Start/position = Vector2(170, 128)
+resource_local_to_scene = true
+states/Move/node = SubResource("AnimationNodeBlendTree_a1fhh")
+states/Move/position = Vector2(402, 48)
+states/Start/position = Vector2(164, 176)
 states/idle/node = SubResource("AnimationNodeAnimation_co3ek")
 states/idle/position = Vector2(402, 176)
-states/move/node = SubResource("AnimationNodeAnimation_0cqo3")
-states/move/position = Vector2(402, 44)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_a7iiu"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_5gmm1"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_h6123")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_a7iiu"), "idle", "Move", SubResource("AnimationNodeStateMachineTransition_8xykc")]
 graph_offset = Vector2(79, -17)
 
 [node name="Neanderthal" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="Body" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -230,7 +241,6 @@ texture = ExtResource("2_vho7f")
 [node name="AttackPivot" type="Node2D" parent="Body/DefaultRotation"]
 position = Vector2(50.7891, -17.1307)
 rotation = 0.251327
-scale = Vector2(1, 1)
 
 [node name="RightArm" type="Sprite2D" parent="Body/DefaultRotation/AttackPivot"]
 position = Vector2(-7.5, -28.5)
@@ -245,7 +255,6 @@ texture = ExtResource("4_gn4ar")
 
 [node name="HitBox" type="Area2D" parent="Body/DefaultRotation/Shoulders"]
 rotation = -1.51274
-scale = Vector2(1, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body/DefaultRotation/Shoulders/HitBox"]
 polygon = PackedVector2Array(-23, -65, -11, -71, 11, -60, 25, -37, 25, 37, 13, 60, -10, 69, -25, 61, -33, 20, -30, -43)
@@ -257,7 +266,7 @@ texture = ExtResource("5_kehmc")
 unique_name_in_owner = true
 position = Vector2(73, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="EnemySpacer" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m5hxs")
 
 [node name="Behaviours" type="Node" parent="."]
@@ -270,7 +279,7 @@ script = ExtResource("7_q8tuj")
 
 [node name="NeanderthalAnimationBehaviour" type="Node" parent="Behaviours"]
 script = ExtResource("8_f5bt4")
-is_moving = true
+state = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -278,8 +287,13 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeStateMachine_26wym")
 advance_expression_base_node = NodePath("../Behaviours/NeanderthalAnimationBehaviour")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Move/TimeScale/scale = 1.0
 
 [connection signal="area_entered" from="Body/DefaultRotation/Shoulders/HitBox" to="Behaviours/EnemyHealthBehaviour" method="_on_hit_box_area_entered"]
+[connection signal="speed_change" from="Behaviours/ChasePlayerBehaviour" to="Behaviours/NeanderthalAnimationBehaviour" method="_on_chase_player_behaviour_speed_change"]
+[connection signal="ready" from="AnimationTree" to="Behaviours/NeanderthalAnimationBehaviour" method="_on_animation_tree_ready"]

@@ -66,6 +66,15 @@ player_1_turret_down={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="NOTHING"
+2d_physics/layer_2="EnemyBody"
+2d_physics/layer_3="EnemySpacer"
+2d_physics/layer_4="PlayerProjectile"
+2d_physics/layer_5="EnemyAttack"
+2d_physics/layer_6="PlayerBody"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -7,6 +7,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_koqpr")]
 position = Vector2(-59, -2)
+speed = 3.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.25, 0.25)
@@ -15,19 +16,19 @@ zoom = Vector2(0.25, 0.25)
 unique_name_in_owner = true
 
 [node name="Neanderthal" parent="." instance=ExtResource("2_pk538")]
-position = Vector2(96, 987)
+position = Vector2(-1296, -1013)
 
 [node name="Neanderthal2" parent="." instance=ExtResource("2_pk538")]
-position = Vector2(-175, -980)
+position = Vector2(-1134, -1013)
 
 [node name="Neanderthal3" parent="." instance=ExtResource("2_pk538")]
-position = Vector2(-1722, 752)
+position = Vector2(-1595, -1013)
 
 [node name="Neanderthal4" parent="." instance=ExtResource("2_pk538")]
-position = Vector2(1927, -802)
+position = Vector2(-831, -1013)
 
 [node name="Neanderthal5" parent="." instance=ExtResource("2_pk538")]
-position = Vector2(-1786, -845)
+position = Vector2(-1449, -1013)
 
 [node name="Neanderthal6" parent="." instance=ExtResource("2_pk538")]
-position = Vector2(1215, 345)
+position = Vector2(-983, -1013)
