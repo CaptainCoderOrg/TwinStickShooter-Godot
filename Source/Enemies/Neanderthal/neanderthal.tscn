@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dna25o5ef8t8s"]
+[gd_scene load_steps=20 format=3 uid="uid://dna25o5ef8t8s"]
 
 [ext_resource type="Texture2D" uid="uid://b7lnd6437otb7" path="res://Sprites/Neanderthal/Grunt-Foot.png" id="1_0m2pc"]
 [ext_resource type="Texture2D" uid="uid://dwoeiuj2ahxvk" path="res://Sprites/Neanderthal/Grunt-Arm.png" id="2_vho7f"]
@@ -7,9 +7,201 @@
 [ext_resource type="Texture2D" uid="uid://ba3pftacr7vq8" path="res://Sprites/Neanderthal/Grunt-Head.png" id="5_kehmc"]
 [ext_resource type="Script" path="res://Enemies/chase_player_behaviour.gd" id="6_wvy6x"]
 [ext_resource type="Script" path="res://Enemies/enemy_health_behaviour.gd" id="7_q8tuj"]
+[ext_resource type="Script" path="res://Enemies/Neanderthal/neanderthal_animation_behaviour.gd" id="8_f5bt4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5hxs"]
 radius = 28.4429
+
+[sub_resource type="Animation" id="Animation_ib1wi"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_vgu1k"]
+resource_name = "move"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/DefaultRotation/RightFoot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, -30), Vector2(19.9998, -42.0001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/DefaultRotation/LeftFoot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20.0002, -41.9999), Vector2(-20.0001, -32.9999)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/DefaultRotation/Shoulders:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0872665]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/DefaultRotation/LeftArm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-48.0001, -15.9998), Vector2(-47.0001, -36.9998)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/DefaultRotation/AttackPivot:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50.7891, -17.1307), Vector2(53, 7.99981)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/DefaultRotation/AttackPivot:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0872665, 0.251327]
+}
+
+[sub_resource type="Animation" id="Animation_8iofj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/DefaultRotation/RightFoot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/DefaultRotation/LeftFoot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, -30)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/DefaultRotation/Shoulders:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/DefaultRotation/LeftArm:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-47.5892, -39.0419)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/DefaultRotation/AttackPivot:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50.7891, -17.1307)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/DefaultRotation/AttackPivot:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.251327]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xjba7"]
+_data = {
+"RESET": SubResource("Animation_8iofj"),
+"idle": SubResource("Animation_ib1wi"),
+"move": SubResource("Animation_vgu1k")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_co3ek"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0cqo3"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a7iiu"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5gmm1"]
+xfade_time = 0.5
+advance_mode = 2
+advance_expression = "is_moving
+"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h6123"]
+xfade_time = 0.5
+advance_mode = 2
+advance_expression = "!is_moving"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_26wym"]
+states/Start/position = Vector2(170, 128)
+states/idle/node = SubResource("AnimationNodeAnimation_co3ek")
+states/idle/position = Vector2(402, 176)
+states/move/node = SubResource("AnimationNodeAnimation_0cqo3")
+states/move/position = Vector2(402, 44)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_a7iiu"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_5gmm1"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_h6123")]
+graph_offset = Vector2(79, -17)
 
 [node name="Neanderthal" type="CharacterBody2D"]
 
@@ -30,13 +222,15 @@ scale = Vector2(1, -1)
 texture = ExtResource("1_0m2pc")
 
 [node name="LeftArm" type="Sprite2D" parent="Body/DefaultRotation"]
-position = Vector2(-45, -42)
-rotation = -3.14159
+position = Vector2(-47.5892, -39.0419)
+rotation = 3.07772
 scale = Vector2(1, -1)
 texture = ExtResource("2_vho7f")
 
 [node name="AttackPivot" type="Node2D" parent="Body/DefaultRotation"]
-position = Vector2(52, -13)
+position = Vector2(50.7891, -17.1307)
+rotation = 0.251327
+scale = Vector2(1, 1)
 
 [node name="RightArm" type="Sprite2D" parent="Body/DefaultRotation/AttackPivot"]
 position = Vector2(-7.5, -28.5)
@@ -49,17 +243,19 @@ texture = ExtResource("3_har4f")
 [node name="Shoulders" type="Sprite2D" parent="Body/DefaultRotation"]
 texture = ExtResource("4_gn4ar")
 
+[node name="HitBox" type="Area2D" parent="Body/DefaultRotation/Shoulders"]
+rotation = -1.51274
+scale = Vector2(1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body/DefaultRotation/Shoulders/HitBox"]
+polygon = PackedVector2Array(-23, -65, -11, -71, 11, -60, 25, -37, 25, 37, 13, 60, -10, 69, -25, 61, -33, 20, -30, -43)
+
 [node name="Head" type="Sprite2D" parent="Body/DefaultRotation"]
 texture = ExtResource("5_kehmc")
 
 [node name="MoveTarget" type="Marker2D" parent="Body"]
 unique_name_in_owner = true
 position = Vector2(73, 0)
-
-[node name="HitBox" type="Area2D" parent="Body"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body/HitBox"]
-polygon = PackedVector2Array(-23, -65, -11, -71, 11, -60, 25, -37, 25, 37, 13, 60, -10, 69, -25, 61, -33, 20, -30, -43)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m5hxs")
@@ -72,4 +268,18 @@ script = ExtResource("6_wvy6x")
 [node name="EnemyHealthBehaviour" type="Node" parent="Behaviours"]
 script = ExtResource("7_q8tuj")
 
-[connection signal="area_entered" from="Body/HitBox" to="Behaviours/EnemyHealthBehaviour" method="_on_hit_box_area_entered"]
+[node name="NeanderthalAnimationBehaviour" type="Node" parent="Behaviours"]
+script = ExtResource("8_f5bt4")
+is_moving = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xjba7")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_26wym")
+advance_expression_base_node = NodePath("../Behaviours/NeanderthalAnimationBehaviour")
+anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="area_entered" from="Body/DefaultRotation/Shoulders/HitBox" to="Behaviours/EnemyHealthBehaviour" method="_on_hit_box_area_entered"]
