@@ -71,6 +71,5 @@ script = ExtResource("6_wvy6x")
 
 [node name="EnemyHealthBehaviour" type="Node" parent="Behaviours"]
 script = ExtResource("7_q8tuj")
-health = 3.0
 
 [connection signal="area_entered" from="Body/HitBox" to="Behaviours/EnemyHealthBehaviour" method="_on_hit_box_area_entered"]

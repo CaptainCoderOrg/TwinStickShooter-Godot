@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bol2le5vop0cp"]
+[gd_scene load_steps=27 format=3 uid="uid://bol2le5vop0cp"]
 
 [ext_resource type="Texture2D" uid="uid://cqji2moqmowuc" path="res://Sprites/Triceratops/Triceratops-Back-Lower.png" id="1_3duwa"]
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_dxqka"]
@@ -14,10 +14,346 @@
 [ext_resource type="Texture2D" uid="uid://cbf2ebdbu7i2j" path="res://Sprites/Turret/TurretSoldier.png" id="10_u0rlj"]
 [ext_resource type="Script" path="res://Player/Scripts/player_movement_behaviour.gd" id="12_pggar"]
 [ext_resource type="Script" path="res://Player/Scripts/player_turret_behaviour.gd" id="13_glhkt"]
+[ext_resource type="Script" path="res://Player/Scripts/player_animation_behaviour.gd" id="15_0vul2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qfvi1"]
 radius = 106.0
 height = 448.0
+
+[sub_resource type="Animation" id="Animation_ocr61"]
+resource_name = "move"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Triceratops/DefaultRotation/RightRearLeg/Triceratops-back-upper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(27.5, -21.5), Vector2(27.0002, -55.0004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Triceratops/DefaultRotation/RightRearLeg/Triceratops-back-lower:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(48.0005, 11.9996), Vector2(48, -111)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Triceratops/DefaultRotation/LeftRearLeg/Triceratops-back-lower:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(48.5, -90.5), Vector2(48.9995, 62.0003)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Triceratops/DefaultRotation/LeftRearLeg/Triceratops-back-upper:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(27.5, -21.5), Vector2(27.9995, 21.0003)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Triceratops/DefaultRotation/RightFrontLeg/Triceratops-front-lower:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(27.9998, 8.9996), Vector2(27.9994, -93.0004)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Triceratops/DefaultRotation/RightFrontLeg/Triceratops-front-upper:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16.9997, -21.0004), Vector2(15.9996, -49.0004)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Triceratops/DefaultRotation/LeftFrontLeg/Triceratops-front-upper:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(17, -23.5), Vector2(17.0002, 10.0003)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Triceratops/DefaultRotation/LeftFrontLeg/Triceratops-front-lower:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(28, -80.5), Vector2(28.0002, 38.0004)]
+}
+
+[sub_resource type="Animation" id="Animation_2kjaa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Triceratops/DefaultRotation/RightRearLeg/Triceratops-back-upper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(27.5, -21.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Triceratops/DefaultRotation/RightRearLeg/Triceratops-back-lower:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48.5, -90.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Triceratops/DefaultRotation/LeftRearLeg/Triceratops-back-lower:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48.5, -90.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Triceratops/DefaultRotation/LeftRearLeg/Triceratops-back-upper:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(27.5, -21.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Triceratops/DefaultRotation/RightFrontLeg/Triceratops-front-lower:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28, -80.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Triceratops/DefaultRotation/RightFrontLeg/Triceratops-front-upper:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, -23.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Triceratops/DefaultRotation/LeftFrontLeg/Triceratops-front-upper:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, -23.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Triceratops/DefaultRotation/LeftFrontLeg/Triceratops-front-lower:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28, -80.5)]
+}
+
+[sub_resource type="Animation" id="Animation_j6f47"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Triceratops/DefaultRotation/RightFrontLeg/Triceratops-front-lower:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28, -80.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Triceratops/DefaultRotation/RightFrontLeg/Triceratops-front-upper:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, -23.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Triceratops/DefaultRotation/LeftRearLeg/Triceratops-back-lower:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48.5, -90.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Triceratops/DefaultRotation/LeftRearLeg/Triceratops-back-upper:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(27.5, -21.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Triceratops/DefaultRotation/RightRearLeg/Triceratops-back-lower:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(48.5, -90.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Triceratops/DefaultRotation/RightRearLeg/Triceratops-back-upper:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(27.5, -21.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Triceratops/DefaultRotation/LeftFrontLeg/Triceratops-front-lower:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28, -80.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Triceratops/DefaultRotation/LeftFrontLeg/Triceratops-front-upper:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, -23.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o4ndo"]
+_data = {
+"RESET": SubResource("Animation_2kjaa"),
+"idle": SubResource("Animation_j6f47"),
+"move": SubResource("Animation_ocr61")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_72tbp"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n86e7"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tqje6"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fkqnb"]
+xfade_time = 0.5
+advance_mode = 2
+advance_expression = "is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ovd5f"]
+xfade_time = 0.5
+advance_mode = 2
+advance_expression = "!is_moving"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bv3t7"]
+states/End/position = Vector2(869, 80)
+states/Start/position = Vector2(167, 104)
+states/idle/node = SubResource("AnimationNodeAnimation_72tbp")
+states/idle/position = Vector2(350, 111)
+states/move/node = SubResource("AnimationNodeAnimation_n86e7")
+states/move/position = Vector2(350, -27)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_tqje6"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_fkqnb"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_ovd5f")]
+graph_offset = Vector2(45, -68)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_dxqka")
@@ -115,7 +451,22 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_qfvi1")
 
 [node name="PlayerMovementBehaviour" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("12_pggar")
 
 [node name="PlayerTurretBehaviour" type="Node" parent="."]
 script = ExtResource("13_glhkt")
+
+[node name="PlayerAnimationBehaviour" type="Node" parent="."]
+script = ExtResource("15_0vul2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o4ndo")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_bv3t7")
+advance_expression_base_node = NodePath("../../PlayerAnimationBehaviour")
+anim_player = NodePath("..")

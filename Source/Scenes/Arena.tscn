@@ -15,4 +15,19 @@ zoom = Vector2(0.25, 0.25)
 unique_name_in_owner = true
 
 [node name="Neanderthal" parent="." instance=ExtResource("2_pk538")]
-position = Vector2(559, -467)
+position = Vector2(96, 987)
+
+[node name="Neanderthal2" parent="." instance=ExtResource("2_pk538")]
+position = Vector2(-175, -980)
+
+[node name="Neanderthal3" parent="." instance=ExtResource("2_pk538")]
+position = Vector2(-1722, 752)
+
+[node name="Neanderthal4" parent="." instance=ExtResource("2_pk538")]
+position = Vector2(1927, -802)
+
+[node name="Neanderthal5" parent="." instance=ExtResource("2_pk538")]
+position = Vector2(-1786, -845)
+
+[node name="Neanderthal6" parent="." instance=ExtResource("2_pk538")]
+position = Vector2(1215, 345)
